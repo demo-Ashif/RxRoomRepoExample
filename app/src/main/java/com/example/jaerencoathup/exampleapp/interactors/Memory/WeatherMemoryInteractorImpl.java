@@ -13,8 +13,8 @@ import io.reactivex.subjects.BehaviorSubject;
 
 public class WeatherMemoryInteractorImpl implements WeatherMemoryInteractor {
 
-    BehaviorSubject<WeatherData> observable;
-    WeatherData weatherData;
+    private BehaviorSubject<WeatherData> observable;
+    private WeatherData weatherData;
 
     @Inject
     public WeatherMemoryInteractorImpl() {

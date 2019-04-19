@@ -14,8 +14,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public class WeatherDatabaseInteractorImpl implements WeatherDatabaseInteractor {
 
-    WeatherDatabase weatherDatabase;
-    WeatherMemoryInteractor memoryInteractor;
+    private WeatherDatabase weatherDatabase;
+    private WeatherMemoryInteractor memoryInteractor;
 
     @Inject
     public WeatherDatabaseInteractorImpl(WeatherDatabase weatherDatabase, WeatherMemoryInteractor memoryInteractor) {

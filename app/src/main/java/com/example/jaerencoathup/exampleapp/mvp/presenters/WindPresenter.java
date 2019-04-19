@@ -14,8 +14,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class WindPresenter extends BasePresenter<Wind.View> implements Wind.Presenter {
 
-    Wind.View view;
-    WeatherRepository weatherRepository;
+    //Wind.View view;
+    private WeatherRepository weatherRepository;
 
     @Inject
     public WindPresenter(Wind.View view, WeatherRepository weatherRepository) {

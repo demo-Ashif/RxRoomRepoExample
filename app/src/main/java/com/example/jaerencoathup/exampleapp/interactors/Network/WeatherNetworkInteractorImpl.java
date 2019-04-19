@@ -15,10 +15,10 @@ import io.reactivex.Single;
 
 public class WeatherNetworkInteractorImpl implements WeatherNetworkInteractor {
 
-    ApiService apiService;
-    SessionService sessionService;
-    WeatherDatabaseInteractor databaseInteractor;
-    WeatherMemoryInteractor memoryInteractor;
+    private ApiService apiService;
+    private SessionService sessionService;
+    private WeatherDatabaseInteractor databaseInteractor;
+    private WeatherMemoryInteractor memoryInteractor;
 
     @Inject
     public WeatherNetworkInteractorImpl(ApiService apiService,

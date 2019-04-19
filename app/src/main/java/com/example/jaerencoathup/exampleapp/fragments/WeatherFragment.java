@@ -44,7 +44,9 @@ public class WeatherFragment extends BaseFragment<Weather.Presenter> implements 
     }
 
     private void injectDependencies() {
-        ExampleApplication.getApplicationComponent().plus(new WeatherModule(this)).inject(this);
+        ExampleApplication.getApplicationComponent()
+                .plus(new WeatherModule(this))
+                .inject(this);
     }
 
     @Override

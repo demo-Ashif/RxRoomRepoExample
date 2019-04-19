@@ -19,15 +19,15 @@ import io.reactivex.disposables.Disposable;
 
 public class WeatherRepositoryImpl extends BaseRepository implements WeatherRepository {
 
-    SessionService sessionService;
+    private SessionService sessionService;
 
-    Disposable dataProviderDisposable;
+    private Disposable dataProviderDisposable;
 
-    WeatherNetworkInteractor networkInteractor;
+    private WeatherNetworkInteractor networkInteractor;
 
-    WeatherDatabaseInteractor databaseInteractor;
+    private WeatherDatabaseInteractor databaseInteractor;
 
-    WeatherMemoryInteractor memoryInteractor;
+    private WeatherMemoryInteractor memoryInteractor;
 
     @Inject
     public WeatherRepositoryImpl(SessionService sessionService,

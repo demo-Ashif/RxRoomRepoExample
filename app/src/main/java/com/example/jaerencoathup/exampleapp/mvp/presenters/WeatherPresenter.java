@@ -9,7 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class WeatherPresenter extends BasePresenter<Weather.View> implements Weather.Presenter {
 
-    WeatherRepository weatherRepository;
+    private WeatherRepository weatherRepository;
 
     @Inject
     public WeatherPresenter(Weather.View view, WeatherRepository weatherRepository) {
