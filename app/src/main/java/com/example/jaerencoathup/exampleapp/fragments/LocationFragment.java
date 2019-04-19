@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.jaerencoathup.exampleapp.dagger.modules.SecondModule;
+import com.example.jaerencoathup.exampleapp.dagger.modules.WindModule;
 import com.example.jaerencoathup.exampleapp.ExampleApplication;
-import com.example.jaerencoathup.exampleapp.mvp.Third;
+import com.example.jaerencoathup.exampleapp.mvp.Location;
 import com.example.jaerencoathup.exampleapp.R;
 import com.example.jaerencoathup.exampleapp.persistence.WeatherData;
 
@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ThirdFragment extends ExampleFragment<Third.Presenter> implements Third.View {
+public class LocationFragment extends BaseFragment<Location.Presenter> implements Location.View {
 
     @BindView(R.id.tv_location_name)
     TextView tvLocationName;
@@ -44,7 +44,7 @@ public class ThirdFragment extends ExampleFragment<Third.Presenter> implements T
 
     private void injectDependencies() {
         ExampleApplication.getApplicationComponent()
-                .plus(new SecondModule(this))
+                .plus(new WindModule(this))
                 .inject(this);
     }
 

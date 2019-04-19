@@ -3,7 +3,7 @@ package com.example.jaerencoathup.exampleapp.fragments;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 
-import com.example.jaerencoathup.exampleapp.activities.Example;
+import com.example.jaerencoathup.exampleapp.activities.BaseView;
 
 import javax.inject.Inject;
 
@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
  * Created by jaerencoathup on 15/05/2017.
  */
 
-public class ExampleFragment<T extends Example.Presenter> extends Fragment implements Example.View {
+public class BaseFragment<T extends BaseView.Presenter> extends Fragment implements BaseView.View {
 
     @Inject
     T presenter;

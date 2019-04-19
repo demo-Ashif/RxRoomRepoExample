@@ -2,9 +2,9 @@ package com.example.jaerencoathup.exampleapp.dagger.components;
 
 import com.example.jaerencoathup.exampleapp.dagger.modules.ApplicationModule;
 import com.example.jaerencoathup.exampleapp.dagger.modules.DatabaseModule;
-import com.example.jaerencoathup.exampleapp.dagger.modules.SecondModule;
-import com.example.jaerencoathup.exampleapp.dagger.modules.ThirdModule;
-import com.example.jaerencoathup.exampleapp.dagger.modules.FirstModule;
+import com.example.jaerencoathup.exampleapp.dagger.modules.WindModule;
+import com.example.jaerencoathup.exampleapp.dagger.modules.LocationModule;
+import com.example.jaerencoathup.exampleapp.dagger.modules.WeatherModule;
 import com.example.jaerencoathup.exampleapp.dagger.modules.NetworkingModule;
 import com.example.jaerencoathup.exampleapp.dagger.modules.WeatherRepositoryModule;
 import com.example.jaerencoathup.exampleapp.ExampleApplication;
@@ -24,7 +24,7 @@ import dagger.Component;
 @Singleton
 public interface ApplicationComponent {
     void inject(ExampleApplication exampleApplication);
-    SecondComponent plus(SecondModule module);
-    FirstComponent plus(FirstModule module);
-    ThirdComponent plus(ThirdModule module);
+    WindComponent plus(WindModule module);
+    WeatherComponent plus(WeatherModule module);
+    LocationComponent plus(LocationModule module);
 }

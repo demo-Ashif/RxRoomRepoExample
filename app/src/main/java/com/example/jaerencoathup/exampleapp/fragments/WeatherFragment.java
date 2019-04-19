@@ -6,16 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.jaerencoathup.exampleapp.dagger.modules.FirstModule;
+import com.example.jaerencoathup.exampleapp.dagger.modules.WeatherModule;
 import com.example.jaerencoathup.exampleapp.ExampleApplication;
-import com.example.jaerencoathup.exampleapp.mvp.First;
+import com.example.jaerencoathup.exampleapp.mvp.Weather;
 import com.example.jaerencoathup.exampleapp.persistence.WeatherData;
 import com.example.jaerencoathup.exampleapp.R;
 import com.example.jaerencoathup.exampleapp.utils.DateUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FirstFragment extends ExampleFragment<First.Presenter> implements First.View {
+public class WeatherFragment extends BaseFragment<Weather.Presenter> implements Weather.View {
 
     @BindView(R.id.tv_day_name)
     TextView tvDayName;
@@ -44,7 +44,7 @@ public class FirstFragment extends ExampleFragment<First.Presenter> implements F
     }
 
     private void injectDependencies() {
-        ExampleApplication.getApplicationComponent().plus(new FirstModule(this)).inject(this);
+        ExampleApplication.getApplicationComponent().plus(new WeatherModule(this)).inject(this);
     }
 
     @Override

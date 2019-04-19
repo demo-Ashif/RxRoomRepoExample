@@ -11,7 +11,7 @@ import retrofit2.HttpException;
  * Created by jaerencoathup on 18/11/2017.
  */
 
-public class RepositoryTemplate {
+public class BaseRepository {
     /**
      * If Throwable is not an http exception -> crash the app.
      */

@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * Created by jaerencoathup on 15/05/2017.
  */
 
-public class ExampleActivity<T extends Example.Presenter> extends AppCompatActivity implements Example.View {
+public class BaseActivity<T extends BaseView.Presenter> extends AppCompatActivity implements BaseView.View {
 
     @Inject
     T presenter;

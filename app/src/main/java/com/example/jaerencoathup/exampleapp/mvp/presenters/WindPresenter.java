@@ -1,6 +1,6 @@
 package com.example.jaerencoathup.exampleapp.mvp.presenters;
 
-import com.example.jaerencoathup.exampleapp.mvp.Second;
+import com.example.jaerencoathup.exampleapp.mvp.Wind;
 import com.example.jaerencoathup.exampleapp.repositories.weather.WeatherRepository;
 
 import javax.inject.Inject;
@@ -12,13 +12,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
  * Created by jaerencoathup on 15/11/2017.
  */
 
-public class SecondPresenter extends PresenterTemplate<Second.View> implements Second.Presenter {
+public class WindPresenter extends BasePresenter<Wind.View> implements Wind.Presenter {
 
-    Second.View view;
+    Wind.View view;
     WeatherRepository weatherRepository;
 
     @Inject
-    public SecondPresenter(Second.View view, WeatherRepository weatherRepository) {
+    public WindPresenter(Wind.View view, WeatherRepository weatherRepository) {
         this.view = view;
         this.weatherRepository = weatherRepository;
     }

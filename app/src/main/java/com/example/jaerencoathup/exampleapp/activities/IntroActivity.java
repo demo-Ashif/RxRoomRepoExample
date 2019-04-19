@@ -6,7 +6,7 @@ import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class IntroActivity extends ExampleActivity {
+public class IntroActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,7 +4,7 @@ import com.example.jaerencoathup.exampleapp.interactors.Database.WeatherDatabase
 import com.example.jaerencoathup.exampleapp.interactors.Memory.WeatherMemoryInteractor;
 import com.example.jaerencoathup.exampleapp.interactors.Network.WeatherNetworkInteractor;
 import com.example.jaerencoathup.exampleapp.persistence.WeatherData;
-import com.example.jaerencoathup.exampleapp.repositories.RepositoryTemplate;
+import com.example.jaerencoathup.exampleapp.repositories.BaseRepository;
 import com.example.jaerencoathup.exampleapp.session.SessionService;
 
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ import io.reactivex.disposables.Disposable;
  * Created by jaerencoathup on 03/11/2017.
  */
 
-public class WeatherRepositoryImpl extends RepositoryTemplate implements WeatherRepository {
+public class WeatherRepositoryImpl extends BaseRepository implements WeatherRepository {
 
     SessionService sessionService;
 

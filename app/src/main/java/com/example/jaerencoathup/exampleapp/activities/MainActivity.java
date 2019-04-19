@@ -2,6 +2,9 @@ package com.example.jaerencoathup.exampleapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+
+import com.example.jaerencoathup.exampleapp.fragments.LocationFragment;
+import com.example.jaerencoathup.exampleapp.fragments.WindFragment;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,15 +12,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
-import com.example.jaerencoathup.exampleapp.fragments.ThirdFragment;
-import com.example.jaerencoathup.exampleapp.fragments.FirstFragment;
-import com.example.jaerencoathup.exampleapp.fragments.SecondFragment;
+import com.example.jaerencoathup.exampleapp.fragments.WeatherFragment;
 import com.example.jaerencoathup.exampleapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends ExampleActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
@@ -50,11 +51,11 @@ public class MainActivity extends ExampleActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new FirstFragment();
+                    return new WeatherFragment();
                 case 1:
-                    return new SecondFragment();
+                    return new WindFragment();
                 case 2:
-                    return new ThirdFragment();
+                    return new LocationFragment();
                 default:
                     return null;
             }
