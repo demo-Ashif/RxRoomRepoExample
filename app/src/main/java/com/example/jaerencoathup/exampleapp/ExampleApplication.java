@@ -8,6 +8,8 @@ import com.facebook.stetho.Stetho;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import timber.log.Timber;
+
 /**
  * Created by jaerencoathup on 15/04/2017.
  */
@@ -21,6 +23,10 @@ public class ExampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
         injectDependencies();
         Stetho.initializeWithDefaults(this);
         JodaTimeAndroid.init(this);

@@ -6,6 +6,7 @@ import com.example.jaerencoathup.exampleapp.repositories.weather.WeatherReposito
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import timber.log.Timber;
 
 public class WeatherPresenter extends BasePresenter<Weather.View> implements Weather.Presenter {
 
@@ -19,6 +20,8 @@ public class WeatherPresenter extends BasePresenter<Weather.View> implements Wea
 
     @Override
     public void onBind() {
+        Timber.d("class:%s method:%s", "WeatherPresenter",
+                "onBind()");
         composites.add(weatherRepository.getForecastData()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(view::showWeather));

@@ -8,6 +8,7 @@ import com.example.jaerencoathup.exampleapp.session.SessionService;
 
 import javax.inject.Inject;
 import io.reactivex.Single;
+import timber.log.Timber;
 
 /**
  * Created by jaerencoathup on 25/03/2018.
@@ -33,6 +34,8 @@ public class WeatherNetworkInteractorImpl implements WeatherNetworkInteractor {
 
     @Override
     public Single<WeatherData> getWeatherData(String city) {
+        Timber.d("class:%s method:%s", "WeatherNetworkInteractorImpl", "getWeatherData(String city)");
+
         return apiService.getWeather(city)
                  .map(WeatherData::copyFromResponse)
                 .doOnSuccess(data -> sessionService.saveLocation(data.name))

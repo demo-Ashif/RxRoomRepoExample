@@ -11,6 +11,7 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import timber.log.Timber;
 
 
 /**
@@ -42,16 +43,20 @@ public class WeatherRepositoryImpl extends BaseRepository implements WeatherRepo
 
     @Override
     public Observable<WeatherData> getForecastData() {
+        Timber.d("class:%s method:%s", "WeatherRepositoryImpl", "getForecastData()");
+
         String currentLocationName = sessionService.getLocation();
         Observable<WeatherData> memoryObservable = memoryInteractor.getWeatherData().toObservable();
         Observable<WeatherData> databaseObservable = databaseInteractor.getWeatherData(currentLocationName).toObservable();
         Observable<WeatherData> networkObservable = networkInteractor.getWeatherData(currentLocationName).toObservable();
         if (!isNetworkInProgress()) {
+            Timber.d("class:%s method:%s", "WeatherRepositoryImpl", "if (!isNetworkInProgress())");
             dataProviderDisposable = Observable.concat(memoryObservable, databaseObservable, networkObservable)
                     .filter(data -> data.name.equals(sessionService.getLocation()))
                     .filter(WeatherData::isDataInDate)
                     .firstElement()
-                    .subscribe((boosterData) -> {}, this::handleNonHttpException);
+                    .subscribe((boosterData) -> {
+                    }, this::handleNonHttpException);
         }
 
         return memoryInteractor.getWeatherDataObservable();
